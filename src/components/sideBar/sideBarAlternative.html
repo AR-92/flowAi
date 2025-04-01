@@ -1,0 +1,501 @@
+<div id="sidebarpage" class="" >
+    <div id="sidebar" class="fixed left-0 top-0 h-full w-[300px] border-r border-[#1a1b1c] bg-black transform transition-all duration-200 ease-in-out z-[9999] flex flex-col translate-x-0" >
+      <!-- Sidebar Header with Combined Controls -->
+      <div class="px-1 py-3 border-b border-[#1a1b1c]" >
+        <div class="flex items-center gap-2" >
+          <!-- Save Button -->
+          <button class="text-gray-400 hover:text-white p-1.5 rounded-md hover:bg-[#1a1b1c] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
+              <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+            </svg>
+          </button>
+  
+          <!-- Search Input -->
+          <div class="relative flex-1" >
+            <input type="text" placeholder="Search ..." class="w-full px-3 h-8 bg-[#141414] rounded-md text-sm text-white placeholder-gray-500 border border-[#1a1b1c] focus:border-[#3a3b3c] focus:outline-none transition-colors">
+            <svg class="absolute right-2 top-[8px] h-4 w-4 text-gray-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+          </div>
+  
+          <!-- Close Button -->
+          <button class="text-gray-400 hover:text-white p-1.5 rounded-md hover:bg-[#1a1b1c] transition-colors" _="on click 
+                   add .-translate-x-full to #sidebar
+                   remove .translate-x-0 from #sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+  
+      <!-- Collapsible Sidebar items Section -->
+      <div class="flex-1 overflow-y-auto" >
+        <div id="collapsibleContainer" class="flex flex-col gap-2 p-2" >
+          <!-- Existing collapsibles will be here -->
+  
+          <div class="collapsible-item" data-collapsible=""  id="nyngapv5d">
+            <div class="flex items-center justify-between text-sm text-gray-400 py-1 cursor-pointer hover:bg-[#1a1b1c] rounded-md px-2 text-red-500" onclick="toggleCollapsible(this)" >
+          <div class="flex items-center gap-2" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+    <circle cx="12" cy="13" r="8"></circle>
+    <path d="M5 3 2 6"></path>
+    <path d="m22 6-3-3"></path>
+    <path d="M6.38 18.7 4 21"></path>
+    <path d="M17.64 18.67 20 21"></path>
+    <path d="m9 13 2 2 4-4"></path>
+  </svg>
+            hello
+          </div>
+          <div class="flex items-center gap-2" >
+            <button class="p-1 hover:bg-[#2a2b2c] rounded-md opacity-0 hover:opacity-100 transition-opacity" onclick="event.stopPropagation(); editCollapsible(this)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                <path d="m15 5 4 4"></path>
+              </svg>
+            </button>
+            <button class="p-1 hover:bg-red-950 rounded-md opacity-0 hover:opacity-100 transition-opacity text-red-500" onclick="event.stopPropagation(); deleteCollapsible(this)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18"></path>
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                <line x1="10" x2="10" y1="11" y2="17"></line>
+                <line x1="14" x2="14" y1="11" y2="17"></line>
+              </svg>
+            </button>
+            <svg class="collapsible-arrow transform transition-transform duration-200 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </div>
+      </div>
+            <div class="pl-6 space-y-1 hidden" >
+              <div class="flex items-center w-full px-3 h-8 rounded text-sm text-gray-300 hover:bg-[#1a1b1c] hover:text-white transition-colors" >
+                Empty Component
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Bottom Section -->
+      <div class="flex justify-center gap-2 p-2 border-t border-[#1a1b1c]" >
+        <!-- Save Button -->
+        <button class="text-gray-400 hover:text-white p-1.5 rounded-md hover:bg-[#1a1b1c] transition-colors" onclick="saveSidebar()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+        </button>
+        <button class="flex items-center justify-center gap-2 w-full px-4 h-9 hover:bg-blue-500/20 rounded-md text-sm text-white font-medium transition-colors" _="on click remove .hidden from #customCollapsibleModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12h14"></path>
+          </svg>
+          New Collapsible Item
+        </button>
+  
+        <!-- Refresh Button -->
+        <button class="text-gray-400 hover:text-white p-1.5 rounded-md hover:bg-[#1a1b1c] transition-colors" hx-get="./src/components/sideBar/sideBar.html" hx-target="#sidebarpage" hx-swap="outerHTML" hx-trigger="click">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2v6h-6"></path>
+            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+            <path d="M3 22v-6h6"></path>
+            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Modal -->
+    <div id="customCollapsibleModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[10000] hidden" _="on showModal remove .hidden
+       on closeModal add .hidden
+       on click if target.id == 'customCollapsibleModal' trigger closeModal"  data-editing-element="">
+      <div class="bg-black rounded-lg p-6 w-[400px] border border-[#1a1b1c]" >
+        <div class="flex justify-between items-center mb-4" >
+          <h3 class="text-lg font-medium text-white">Create Collapsible Item</h3>
+          <button class="text-gray-400 hover:text-white p-1 hover:bg-[#1a1b1c] rounded-md" _="on click trigger closeModal">Create Component</button>
+        </div>
+  
+        <div class="space-y-4" >
+          <!-- Collapsible Name -->
+          <div >
+            <label class="text-sm text-gray-400">Collapsible Name</label>
+            <input type="text" class="w-full mt-1 px-3 py-2 bg-black border border-[#1a1b1c] rounded-md focus:outline-none focus:border-blue-500 text-white" placeholder="Enter Collapsible name">
+          </div>
+  
+          <!-- Icon Selector -->
+          <div >
+            <label class="text-sm text-gray-400">Select Icon</label>
+            <div class="relative mt-1" >
+              <div class="relative" >
+                <div class="flex items-center" >
+                  <!-- Selected Icon Container -->
+                  <span id="selectedIcon" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+          <path d="M12 5v14M5 12h14"></path>
+        </svg>
+      </span>
+  
+                  <!-- Search Input -->
+                  <input type="text" id="iconSearch" placeholder="Search icons..." class="w-full pl-10 pr-3 py-2 bg-black border border-[#1a1b1c] rounded-md text-sm text-white placeholder-gray-500 focus:border-[#3a3b3c] focus:outline-none" _="on input call searchIcons(my.value)" data-selected-icon="alarm-clock-check">
+                </div>
+              </div>
+  
+              <!-- Icons Grid -->
+              <div id="iconsGrid" class="absolute w-full mt-1 bg-black border border-[#1a1b1c] rounded-md max-h-[200px] overflow-y-auto hidden" >
+                <div class="p-2 grid grid-cols-6 gap-2" ></div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Action Buttons -->
+          <div class="flex justify-end gap-2 mt-6" >
+            <button class="px-4 py-2 text-sm bg-transparent hover:bg-[#1a1b1c] rounded-md text-gray-400 hover:text-white" _="on click trigger closeModal">
+              Cancel
+            </button>
+            <button class="px-4 py-2 text-sm bg-[#1a1b1c] hover:bg-[#2a2b2c] rounded-md text-white" onclick="createCollapsible()">Update Component</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Check if icons is already defined
+      if (typeof window.icons === "undefined") {
+        window.icons = [];
+      }
+  
+      // Fetch icons when the component loads
+      async function loadIcons() {
+        try {
+          const response = await fetch("/api/icons");
+          const serverIcons = await response.json();
+  
+          // Process server icons to ensure proper size and class
+          const processedServerIcons = serverIcons.map((icon) => ({
+            name: icon.name,
+            svg: icon.svg.replace(
+              /<svg([^>]*)>/,
+              '<svg$1 class="h-4 w-4" width="24" height="24">'
+            ),
+          }));
+  
+          window.icons = processedServerIcons;
+          return window.icons;
+        } catch (error) {
+          console.error("Failed to load icons:", error);
+          return [];
+        }
+      }
+  
+      async function searchIcons(searchTerm) {
+        const iconsGrid = document.getElementById("iconsGrid");
+        const gridContent = iconsGrid.querySelector("div");
+  
+        if (!window.icons.length) {
+          window.icons = await loadIcons();
+        }
+  
+        // Show/hide the grid based on search term
+        iconsGrid.classList.toggle("hidden", !searchTerm);
+  
+        if (!searchTerm) return;
+  
+        // Filter and display icons
+        const filteredIcons = window.icons.filter((icon) =>
+          icon.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+  
+        gridContent.innerHTML = filteredIcons
+          .map(
+            (icon) => `
+          <button 
+              class="p-2 hover:bg-[#1a1b1c] rounded-md flex items-center justify-center text-gray-400 hover:text-white"
+              onclick="selectIcon('${icon.name}', ${JSON.stringify(
+              icon.svg
+            ).replace(/"/g, "&quot;")})"
+          >
+              ${icon.svg}
+          </button>
+      `
+          )
+          .join("");
+      }
+  
+      function selectIcon(name, svg) {
+        const searchInput = document.getElementById("iconSearch");
+        const selectedIcon = document.getElementById("selectedIcon");
+  
+        // Set the input value to the icon name
+        searchInput.value = name;
+        searchInput.dataset.selectedIcon = name;
+  
+        // Update the icon display
+        selectedIcon.innerHTML = svg;
+  
+        // Hide the grid
+        document.getElementById("iconsGrid").classList.add("hidden");
+        document.getElementById("iconsGrid").children[0].innerHTML = "";
+      }
+  
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (event) => {
+        const iconsGrid = document.getElementById("iconsGrid");
+        const iconSearch = document.getElementById("iconSearch");
+  
+        if (
+          !event.target.closest("#iconSearch") &&
+          !event.target.closest("#iconsGrid")
+        ) {
+          iconsGrid.classList.add("hidden");
+        }
+      });
+  
+      // Initialize
+      loadIcons();
+  
+      function createCollapsible() {
+        const modal = document
+          .querySelector("#customCollapsibleModal")
+          .querySelector(".bg-black");
+        const nameInput = modal.querySelector('input[type="text"]');
+        const selectedIcon = document.querySelector("#selectedIcon").innerHTML;
+        const newName = nameInput.value || "New Collapsible";
+  
+        const template = `
+        <div class='collapsible-item' data-collapsible>
+          <div class='flex items-center justify-between text-sm text-gray-400 py-1 cursor-pointer hover:bg-[#1a1b1c] rounded-md px-2' onclick="toggleCollapsible(this)">
+            <div class='flex items-center gap-2'>
+              ${selectedIcon}
+              ${newName}
+            </div>
+            <div class='flex items-center gap-2'>
+              <button 
+                class='p-1 hover:bg-[#2a2b2c] rounded-md opacity-0 hover:opacity-100 transition-opacity'
+                onclick="event.stopPropagation(); editCollapsible(this)"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                  <path d="m15 5 4 4"/>
+                </svg>
+              </button>
+              <button 
+                class='p-1 hover:bg-red-950 rounded-md opacity-0 hover:opacity-100 transition-opacity text-red-500'
+                onclick="event.stopPropagation(); deleteCollapsible(this)"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 6h18"></path>
+                  <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                  <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                  <line x1="10" x2="10" y1="11" y2="17"></line>
+                  <line x1="14" x2="14" y1="11" y2="17"></line>
+                </svg>
+              </button>
+              <svg 
+                class="collapsible-arrow transform transition-transform duration-200 h-4 w-4" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+          </div>
+          <div class='pl-6 space-y-1 hidden'>
+            <div class='flex items-center w-full px-3 h-8 rounded text-sm text-gray-300 
+                        hover:bg-[#1a1b1c] hover:text-white transition-colors'>
+              Empty Component
+            </div>
+          </div>
+        </div>
+      `;
+  
+        document
+          .querySelector("#collapsibleContainer")
+          .insertAdjacentHTML("beforeend", template);
+        document.querySelector("#customCollapsibleModal").classList.add("hidden");
+  
+        // Reset the modal inputs
+        nameInput.value = "";
+        document.querySelector("#selectedIcon").innerHTML = `
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="h-4 w-4"
+        >
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      `;
+      }
+  
+      function toggleCollapsible(element) {
+        // Remove highlight from all nav items
+        document
+          .querySelectorAll(".nav")
+          .forEach((nav) => nav.classList.remove("text-red-500"));
+  
+        // Toggle the content visibility
+        const content = element.nextElementSibling;
+        if (content) {
+          content.classList.toggle("hidden");
+        }
+  
+        // Rotate the arrow if it exists
+        const arrow = element.querySelector(".collapsible-arrow");
+        if (arrow) {
+          arrow.style.transform = content.classList.contains("hidden")
+            ? "rotate(0deg)"
+            : "rotate(90deg)";
+        }
+  
+        // Add highlight to current element
+        element.classList.add("text-red-500");
+      }
+  
+      function editCollapsible(button) {
+        const collapsibleDiv = button.closest("[data-collapsible]");
+        const nameElement = collapsibleDiv.querySelector("div > div:first-child");
+        const currentName = nameElement.textContent.trim();
+        const iconElement = nameElement.querySelector("svg");
+  
+        // Show modal with current values
+        const modal = document.querySelector("#customCollapsibleModal");
+        const nameInput = modal.querySelector('input[type="text"]');
+        const selectedIcon = document.querySelector("#selectedIcon");
+  
+        nameInput.value = currentName;
+        selectedIcon.innerHTML = iconElement.outerHTML;
+  
+        // Store reference to the element being edited
+        modal.dataset.editingElement =
+          collapsibleDiv.id || Math.random().toString(36).substr(2, 9);
+        collapsibleDiv.id = modal.dataset.editingElement;
+  
+        modal.classList.remove("hidden");
+  
+        // Modify create button to update instead
+        const createButton = modal.querySelector(
+          'button[onclick="createCollapsible()"]'
+        );
+        createButton.textContent = "Update Component";
+        createButton.onclick = () =>
+          updateCollapsible(modal.dataset.editingElement);
+      }
+  
+      function updateCollapsible(elementId) {
+        const collapsibleDiv = document.getElementById(elementId);
+        const modal = document.querySelector("#customCollapsibleModal");
+        const nameInput = modal.querySelector('input[type="text"]');
+        const selectedIcon = document.querySelector("#selectedIcon").innerHTML;
+        const newName = nameInput.value || "New Collapsible";
+  
+        // Update while maintaining the complete structure
+        const headerDiv = collapsibleDiv.querySelector("div:first-child");
+        headerDiv.innerHTML = `
+          <div class='flex items-center gap-2'>
+            ${selectedIcon}
+            ${newName}
+          </div>
+          <div class='flex items-center gap-2'>
+            <button 
+              class='p-1 hover:bg-[#2a2b2c] rounded-md opacity-0 hover:opacity-100 transition-opacity'
+              onclick="event.stopPropagation(); editCollapsible(this)"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                <path d="m15 5 4 4"/>
+              </svg>
+            </button>
+            <button 
+              class='p-1 hover:bg-red-950 rounded-md opacity-0 hover:opacity-100 transition-opacity text-red-500'
+              onclick="event.stopPropagation(); deleteCollapsible(this)"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18"></path>
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                <line x1="10" x2="10" y1="11" y2="17"></line>
+                <line x1="14" x2="14" y1="11" y2="17"></line>
+              </svg>
+            </button>
+            <svg 
+              class="collapsible-arrow transform transition-transform duration-200 h-4 w-4" 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </div>
+      `;
+  
+        // Reset modal
+        modal.classList.add("hidden");
+        const createButton = modal.querySelector("button:last-child");
+        createButton.textContent = "Create Component";
+        createButton.onclick = createCollapsible;
+        modal.dataset.editingElement = "";
+  
+        // Reset the form
+        nameInput.value = "";
+        document.querySelector("#selectedIcon").innerHTML = `
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="h-4 w-4"
+        >
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      `;
+      }
+  
+      function deleteCollapsible(button) {
+        const collapsibleDiv = button.closest("[data-collapsible]");
+        collapsibleDiv.remove();
+      }
+  
+      function saveSidebar() {
+        const content = document.getElementById("sidebarpage").outerHTML;
+        fetch("/api/save-sidebar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/html",
+          },
+          body: content,
+        })
+          .then((response) => {
+            if (response.ok) {
+              console.log("Sidebar saved successfully");
+            } else {
+              console.error("Failed to save sidebar");
+            }
+          })
+          .catch((error) => {
+            console.error("Error saving sidebar:", error);
+          });
+      }
+    </script>
+  </div>

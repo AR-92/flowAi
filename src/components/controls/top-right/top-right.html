@@ -1,0 +1,117 @@
+<!-- Top-right control group -->
+<div class="fixed top-4 right-4 flex flex-col gap-2 z-50 text-white">
+  <div class="flex items-center gap-1 bg-black p-1 rounded-lg border border-[#1a1b1c] shadow-lg">
+    <!-- Same buttons as bottom-left --> <button
+      class="relative hover:bg-[#1a1b1c] flex w-8 h-8 cursor-pointer select-none items-center justify-center rounded-md px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 group"
+      title="Save Flow"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-save">
+        <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+        <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+        <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+      </svg> </button> <button
+      class="relative hover:bg-[#1a1b1c] flex w-8 h-8 cursor-pointer select-none items-center justify-center rounded-md px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 group"
+      title="More Options" _="on click toggle .hidden on next <div/>"> <svg xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical">
+        <circle cx="12" cy="12" r="1" />
+        <circle cx="12" cy="5" r="1" />
+        <circle cx="12" cy="19" r="1" />
+      </svg> </button>
+    <div class="hidden">
+      <div
+        class="absolute  right-0 top-12 z-50 min-w-[11.5rem] overflow-hidden rounded-md border w-56 border-[#1a1b1c] bg-black">
+        <div class="p-1 h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]">
+          <div
+            class="relative hover:bg-[#1a1b1c] flex w-full cursor-pointer select-none items-center rounded-sm px-3 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
+            <span>
+              <div class="flex undefined"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-sliders-horizontal mr-2 mt-[0.15em] h-4 w-4 ">
+                  <line x1="21" x2="14" y1="4" y2="4"></line>
+                  <line x1="10" x2="3" y1="4" y2="4"></line>
+                  <line x1="21" x2="12" y1="12" y2="12"></line>
+                  <line x1="8" x2="3" y1="12" y2="12"></line>
+                  <line x1="21" x2="16" y1="20" y2="20"></line>
+                  <line x1="12" x2="3" y1="20" y2="20"></line>
+                  <line x1="14" x2="14" y1="2" y2="6"></line>
+                  <line x1="8" x2="8" y1="10" y2="14"></line>
+                  <line x1="16" x2="16" y1="18" y2="22"></line>
+                </svg><span>Controls</span><span
+                  class="absolute right-2 top-[0.43em] flex items-center rounded-sm bg-muted px-1.5 py-[0.1em] text-muted-foreground"><span
+                    class="flex items-center gap-0.5 justify-center text-[12px]"><span> <span>Ctrl</span> </span><span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-arrow-big-up h-4 w-4">
+                        <path d="M9 18v-6H5l7-7 7 7h-4v6H9z"></path>
+                      </svg> </span><span> <span>A</span> </span></span></span> </div>
+            </span> </div>
+          <div
+            class="relative hover:bg-[#1a1b1c] flex w-full cursor-pointer select-none items-center rounded-sm px-3 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
+            <span>
+              <div class="flex undefined"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-copy mr-2 mt-[0.15em] h-4 w-4 undefined">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                </svg><span>Duplicate</span><span
+                  class="absolute right-2 top-[0.43em] flex items-center rounded-sm bg-muted px-1.5 py-[0.1em] text-muted-foreground"><span
+                    class="flex items-center gap-0.5 justify-center text-[12px]"><span> <span>Ctrl</span> </span><span>
+                      <span>D</span> </span></span></span> </div>
+            </span> </div>
+          <div
+            class="relative hover:bg-red-950 text-red-500 flex w-full cursor-pointer select-none items-center rounded-sm px-3 py-1.5 text-sm outline-none focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-red-400/[.20]"
+            _="on click                      set node to closest .draggable                     call deleteNodeConnections(node)                     remove node">
+            <span>
+              <div class="font-red flex text-status-red"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-trash2 relative top-0.5 mr-2 h-4 w-4">
+                  <path d="M3 6h18"></path>
+                  <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                  <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                  <line x1="10" x2="10" y1="11" y2="17"></line>
+                  <line x1="14" x2="14" y1="11" y2="17"></line>
+                </svg> <span>Delete</span> <span
+                  class="absolute right-2 top-2 flex items-center justify-center rounded-sm px-1 py-[0.2]"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-delete h-4 w-4 stroke-2">
+                    <path
+                      d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z">
+                    </path>
+                    <path d="m12 9 6 6"></path>
+                    <path d="m18 9-6 6"></path>
+                  </svg> </span> </div>
+            </span> </div>
+          <div
+            class="relative hover:bg-red-950 text-red-500 flex w-full cursor-pointer select-none items-center rounded-sm px-3 py-1.5 text-sm outline-none focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-red-400/[.20]"
+            _="on click                      set node to closest .draggable                     call deleteAllChildrenNodes(node)">
+            <span>
+              <div class="font-red flex text-status-red"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-trash2 relative top-0.5 mr-2 h-4 w-4">
+                  <path d="M3 6h18"></path>
+                  <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                  <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                  <line x1="10" x2="10" y1="11" y2="17"></line>
+                  <line x1="14" x2="14" y1="11" y2="17"></line>
+                </svg> <span>Delete All Children</span> <span
+                  class="absolute right-2 top-2 flex items-center justify-center rounded-sm px-1 py-[0.2]"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-delete h-4 w-4 stroke-2">
+                    <path
+                      d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z">
+                    </path>
+                    <path d="m12 9 6 6"></path>
+                    <path d="m18 9-6 6"></path>
+                  </svg> </span> </div>
+            </span> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>

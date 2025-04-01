@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flow</title>
+    <!-- Add favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNCAxNGExIDEgMCAwIDEtLjc4LTEuNjNsOS45LTEwLjJhLjUgLjUgMCAwIDEgLjg2LjQ2bC0xLjkyIDYuMDJBMSAxIDAgMCAwIDEzIDEwaDdhMSAxIDAgMCAxIC43OCAxLjYzbC05LjkgMTAuMmEuNS41IDAgMCAxLS44Ni0uNDZsMS45Mi02LjAyQTEgMSAwIDAgMCAxMSAxNHoiLz48L3N2Zz4="
+    />
+    <script src="./assets/lib/hyperscript.js"></script>
+    <script src="./assets/lib/htmx.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/components.css" />
+    <link rel="stylesheet" href="./assets/css/utilities.css" />
+  </head>
+
+  <body hx-history="false" class="bg-black relative overflow-hidden">
+    <div id="pageId"></div>
+    <div
+      hx-get="./src/components/controls/title-bar/title-bar.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></div>
+
+    <!-- Full-screen container remains fixed -->
+    <div class="zoomable bg-dots">
+      <!-- The inner content is scaled and panned -->
+      <div class="content">
+        <svg class="svg-overlay"></svg>
+        <div class="draggables-container"></div>
+      </div>
+    </div>
+
+    <div
+      hx-get="./src/components/sideBar/sideBar.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></div>
+
+    <div
+      hx-get="./src/components/controls/top-left/top-left.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></div>
+    <div
+      hx-get="./src/components/controls/bottom-left/bottom-left.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></div>
+    <div
+      hx-get="./src/components/controls/top-right/top-right.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></div>
+    <div
+      hx-get="./src/components/controls/bottom-right/bottom-right.html"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+    ></div>
+
+    <script src="./assets/js/zoom.js"></script>
+    <script src="./assets/js/nodeConnectionManager.js"></script>
+
+  </body>
+</html>
