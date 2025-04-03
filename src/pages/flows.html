@@ -1,0 +1,15 @@
+<div class="zoomable bg-dots">
+    <!-- The inner content is scaled and panned -->
+    <div class="content">
+        <svg class="svg-overlay"></svg>
+        <div class="draggables-container"></div>
+    </div>
+</div>
+
+<div
+    hx-get="./src/components/controls/index.html"
+    hx-trigger="load"
+    hx-swap="outerHTML"
+></div>
+<script src="./assets/js/zoom.js"></script>
+<script src="./assets/js/nodeConnectionManager.js"></script>

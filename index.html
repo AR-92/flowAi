@@ -12,7 +12,7 @@
         />
         <script src="./assets/lib/hyperscript.js"></script>
         <script src="./assets/lib/htmx.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="./assets/css/output.css" />
         <link rel="stylesheet" href="./assets/css/base.css" />
         <link rel="stylesheet" href="./assets/css/layout.css" />
         <link rel="stylesheet" href="./assets/css/components.css" />
@@ -20,50 +20,20 @@
     </head>
 
     <body hx-history="false" class="bg-black relative overflow-hidden">
-        <div id="pageId"></div>
-        <div
-            hx-get="./src/components/controls/title-bar/title-bar.html"
-            hx-trigger="load"
-            hx-swap="outerHTML"
-        ></div>
-
-        <!-- Full-screen container remains fixed -->
-        <div class="zoomable bg-dots">
-            <!-- The inner content is scaled and panned -->
-            <div class="content">
-                <svg class="svg-overlay"></svg>
-                <div class="draggables-container"></div>
-            </div>
-        </div>
-
         <div
             hx-get="./src/components/sideBar/sideBar.html"
             hx-trigger="load"
             hx-swap="outerHTML"
         ></div>
 
+        <!-- Full-screen container remains fixed -->
+        <div id="pageId"></div>
         <div
-            hx-get="./src/components/controls/top-left/top-left.html"
+            hx-get="./src/pages/flows.html"
             hx-trigger="load"
-            hx-swap="outerHTML"
+            hx-target="#pageId"
+            hx-swap="innerHTML"
+            hx-remove="true"
         ></div>
-        <div
-            hx-get="./src/components/controls/bottom-left/bottom-left.html"
-            hx-trigger="load"
-            hx-swap="outerHTML"
-        ></div>
-        <div
-            hx-get="./src/components/controls/top-right/top-right.html"
-            hx-trigger="load"
-            hx-swap="outerHTML"
-        ></div>
-        <div
-            hx-get="./src/components/controls/bottom-right/bottom-right.html"
-            hx-trigger="load"
-            hx-swap="outerHTML"
-        ></div>
-
-        <script src="./assets/js/zoom.js"></script>
-        <script src="./assets/js/nodeConnectionManager.js"></script>
     </body>
 </html>
