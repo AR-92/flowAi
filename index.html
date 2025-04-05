@@ -16,20 +16,21 @@
     </head>
 
     <body hx-history="false" class="bg-black relative overflow-hidden">
+        <!-- Mini Sidebar - Always visible -->
         <div
-            hx-get="./src/components/sideBar/sideBar.html"
+            hx-get="./src/components/sideBar/miniSidebar.html"
             hx-trigger="load"
             hx-swap="outerHTML"
         ></div>
 
         <!-- Full-screen container remains fixed -->
-        <div id="pageId"></div>
-        <div
+        <div class="left-[45px] absolute text-white" id="pageId"></div>
+        <!-- <div
             hx-get="./src/pages/flows.html"
             hx-trigger="load"
             hx-target="#pageId"
             hx-swap="innerHTML"
             hx-remove="true"
-        ></div>
+        ></div> -->
     </body>
 </html>
