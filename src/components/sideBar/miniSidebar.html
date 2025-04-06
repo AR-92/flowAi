@@ -1,17 +1,19 @@
-<div
-    class="fixed p-1 pt-4 pb-4 flex flex-col justify-between w-[45px] bg-black h-full border-r border-[#1a1b1c] z-[9999] top-0 left-0"
->
-    <div class="flex flex-col gap-2">
-        <!-- First button should toggle the larger sidebar -->
-        <button
-            class="text-gray-400 hover:text-white p-1.5 rounded-md hover:bg-[#1a1b1c] transition-colors"
-            _="on click
+<!-- _="on click
           if #sidebar.translate-x-0
             remove .translate-x-0 from #sidebar
             add .-translate-x-full to #sidebar
           else
             remove .-translate-x-full from #sidebar
-            add .translate-x-0 to #sidebar"
+            add .translate-x-0 to #sidebar" -->
+<div
+    class="fixed p-1 pt-4 pb-4 flex flex-col justify-between w-[45px] bg-black h-full border-r border-[#1a1b1c] z-[9999] top-0 left-0"
+>
+    <div class="flex flex-col gap-2">
+        <button
+            class="text-gray-400 hover:text-white p-1.5 rounded-md hover:bg-[#1a1b1c] transition-colors"
+            hx-get="/src/pages/default.html"
+            hx-target="#pageId"
+            hx-swap="innerHTML"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

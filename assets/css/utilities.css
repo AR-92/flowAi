@@ -1,1 +1,23 @@
 /* Utility Styles */
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff60;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffffffa2;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
