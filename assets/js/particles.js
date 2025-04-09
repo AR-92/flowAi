@@ -7,7 +7,7 @@
   canvas.height = 649;
   canvas.style.position = "fixed";
   canvas.style.zIndex = "-1";
-  canvas.style.opacity = "0.5"; // Adjust transparency
+  // canvas.style.opacity = "0.5"; // Adjust transparency
 
   div.prepend(canvas);
 
@@ -107,21 +107,19 @@
 
   // ----- Particle System Setup -----
   var particles = [];
-  var numParticles = 300;
-  var noiseScale = 0.006;
+  var numParticles = 400;
+  var noiseScale = 0.01;
   var zOffset = 5;
 
   // Particle varructor
   function Particle() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.speed = 1 + Math.random() * 3;
-    this.size = 1 + Math.random() * 1;
-    // Elegant, pastel-inspired color centered around cool blue shades.
-    // Hue is randomized a bit around 210 with 30% saturation and 60% lightness.
-    this.hue = 210 + (Math.random() * 20 - 10);
-    this.saturation = 10; // lower saturation for a softer look
-    this.lightness = 90; // increased lightness for elegance
+    this.speed = 0.5 + Math.random() * 2;
+    this.size = Math.random() * 2 + 0.1;
+    this.hue = 100 + Math.random() * 200; // Full rainbow spectrum (0-360°)
+    this.saturation = 80 + Math.random() * 20; // Vibrant colors (80-100%)
+    this.lightness = 0.1 + Math.random() * 90; // Balanced pastel brightness (50-70%)
   }
 
   Particle.prototype.update = function () {
@@ -129,13 +127,17 @@
       noise(this.x * noiseScale, this.y * noiseScale, zOffset) * Math.PI * 4;
     var vx = Math.cos(angle) * this.speed;
     var vy = Math.sin(angle) * this.speed;
+
     this.x += vx;
     this.y += vy;
 
-    if (this.x > canvas.width) this.x = 0;
-    if (this.x < 0) this.x = canvas.width;
-    if (this.y > canvas.height) this.y = 0;
-    if (this.y < 0) this.y = canvas.height;
+    // Reverse direction on hitting boundaries
+    if (this.x >= canvas.width - 45 || this.x <= 0) {
+      this.speed *= -1; // Reverse speed
+    }
+    if (this.y >= canvas.height || this.y <= 0) {
+      this.speed *= -1; // Reverse speed
+    }
   };
 
   Particle.prototype.draw = function () {
@@ -151,7 +153,7 @@
 
   // ----- Animation Loop -----
   function animate() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.fillStyle = `rgba(0, 0, 0, 0.05)`;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     particles.forEach((particle) => {
@@ -159,7 +161,7 @@
       particle.draw();
     });
 
-    zOffset += 0.003;
+    zOffset += 0.005;
     requestAnimationFrame(animate);
   }
   animate();
