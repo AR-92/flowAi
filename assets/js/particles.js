@@ -7,25 +7,18 @@
   canvas.height = 649;
   canvas.style.position = "fixed";
   canvas.style.zIndex = "-1";
-  // canvas.style.opacity = "0.5"; // Adjust transparency
-
   div.prepend(canvas);
 
-  // Get the canvas and context
-  // var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
 
-  // Resize the canvas to fill the window
   function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    console.log(window.innerHeight, window.innerHeight);
   }
   window.addEventListener("resize", resize);
   resize();
 
   // ----- Perlin Noise Implementation -----
-  // (Based on the reference implementation by Ken Perlin)
   var permutation = [
     151, 160, 137, 91, 90, 15, 131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140,
     36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23, 190, 6, 148, 247, 120,
@@ -107,19 +100,19 @@
 
   // ----- Particle System Setup -----
   var particles = [];
-  var numParticles = 400;
+  var numParticles = 40;
   var noiseScale = 0.01;
   var zOffset = 5;
 
-  // Particle varructor
+  // Particle constructor
   function Particle() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.speed = 0.5 + Math.random() * 2;
-    this.size = Math.random() * 2 + 0.1;
-    this.hue = 100 + Math.random() * 200; // Full rainbow spectrum (0-360°)
-    this.saturation = 80 + Math.random() * 20; // Vibrant colors (80-100%)
-    this.lightness = 0.1 + Math.random() * 90; // Balanced pastel brightness (50-70%)
+    this.speed = 0.5 + Math.random() * 1;
+    this.size = 1 + Math.random();
+    this.hue = 160 + Math.random() * 200;
+    this.saturation = 80 + Math.random() * 20;
+    this.lightness = 10 + Math.random() * 90;
   }
 
   Particle.prototype.update = function () {
@@ -133,10 +126,44 @@
 
     // Reverse direction on hitting boundaries
     if (this.x >= canvas.width - 45 || this.x <= 0) {
-      this.speed *= -1; // Reverse speed
+      this.speed *= -1;
     }
     if (this.y >= canvas.height || this.y <= 0) {
-      this.speed *= -1; // Reverse speed
+      this.speed *= -1;
+    }
+  };
+
+  // Calculate color distance
+  function colorDistance(p1, p2) {
+    const r1 = p1.hue,
+      g1 = p1.saturation,
+      b1 = p1.lightness;
+    const r2 = p2.hue,
+      g2 = p2.saturation,
+      b2 = p2.lightness;
+    return Math.sqrt((r2 - r1) ** 2 + (g2 - g1) ** 2 + (b2 - b1) ** 2);
+  }
+
+  Particle.prototype.interact = function (particles) {
+    var interactionRange = 5; // Configurable interaction range
+    var minSpeed = -2; // Minimum speed threshold
+    var maxSpeed = 2; // Maximum speed threshold
+
+    for (var i = 0; i < particles.length; i++) {
+      var other = particles[i];
+      var dist = Math.hypot(this.x - other.x, this.y - other.y);
+      var colorDist = colorDistance(this, other);
+
+      if (dist < interactionRange) {
+        // Color-based repulsion or attraction
+        if (colorDist < 100) {
+          // Reverse speed for color similarity (no increase)
+          this.speed = Math.max(this.speed - 0.0001, minSpeed);
+        } else {
+          // Attract for color contrast (no decrease)
+          this.speed = Math.min(this.speed + 0.0001, maxSpeed);
+        }
+      }
     }
   };
 
@@ -153,11 +180,12 @@
 
   // ----- Animation Loop -----
   function animate() {
-    ctx.fillStyle = `rgba(0, 0, 0, 0.05)`;
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     particles.forEach((particle) => {
       particle.update();
+      // particle.interact(particles);
       particle.draw();
     });
 
